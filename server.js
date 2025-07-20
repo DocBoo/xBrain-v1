@@ -3,8 +3,10 @@
 http://localhost
 ==> To serve a view
 
-
 */
+
+// process.env variables
+require('dotenv').config();
 
 // packages imports
 var express= require("express");
@@ -20,7 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //routes
 app.get("/test", (req, res) => {
-  res.status(200).send('<h1>Welcome to EJS world!</h1>!!');
+  res.status(200).send('Hello World!');
   }
 );
 
