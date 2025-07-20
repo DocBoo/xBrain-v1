@@ -1,0 +1,33 @@
+name: xBrainCI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    #- uses: actions/checkout@v4
+    #- name: Setup Node.js
+    #  uses: actions/setup-node@v4
+    #  with:
+    #    node-version: '20'
+    - run: npm install
+    - run: npm test
+
+    # Étape de déploiement après les tests
+    - name: Déployer
+    if: success()
+    # uses: appleboy/ssh-action@v1.0.3
+    with:
+    #  host: ${{ secrets.SSH_HOST }}
+    #  script: |
+    #     cd /chemin/vers/ton/app
+
+    - name: Display success message
+      if: success()
+      run: echo "Build Ok"
