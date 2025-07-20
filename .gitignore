@@ -37,6 +37,7 @@ build/
 .idea/
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 
 # OS files
 .DS_Store
