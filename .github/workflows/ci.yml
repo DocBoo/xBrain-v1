@@ -29,14 +29,14 @@ jobs:
       - run: npm test
 
       # Étape de déploiement après les tests
-      - name: Deploy
-        if: success()
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
+      #- name: Deploy
+        #if: success()
+        #uses: appleboy/ssh-action@v1.0.3
+        #with:
+        #  host: ${{ secrets.SSH_HOST }}
+        #  username: ${{ secrets.SSH_USER }}
+        #  key: ${{ secrets.SSH_KEY }}
+        #  script: |
             # cd /chemin/vers/ton/app
             # Ajoute ici tes commandes de déploiement
 
